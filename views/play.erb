@@ -1,9 +1,9 @@
-<%= session[:player1] %> vs. <%= session[:player2] %>!
+<%= $player1.name %> vs. <%= $player2.name %>!
 <p>
-  <%= session[:player1] %> HP: 20
+  <%= $player1.name %> HP: 20
 </p>
 <p>
-  <%= session[:player2] %> HP: 20
+  <%= $player2.name %> HP: 20
 </p>
 <p>
   <form action='/attack' >
