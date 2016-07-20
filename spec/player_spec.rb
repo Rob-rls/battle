@@ -12,11 +12,6 @@ describe Player do
     expect(thor.hp).to eq described_class::DEFAULT_HP
   end
 
-  it "attacks an opponet" do
-    expect(loki).to receive(:receive_damage)
-    thor.attack(loki)
-  end
-
   it "reduces it's HP if hit" do
     expect{thor.receive_damage}.to change{thor.hp}.by(-10)
   end
