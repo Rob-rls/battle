@@ -1,3 +1,12 @@
 <%= session[:player1] %> vs. <%= session[:player2] %>!
-<%= session[:player1] %> HP: 20
-<%= session[:player2] %> HP: 20
+<p>
+  <%= session[:player1] %> HP: 20
+</p>
+<p>
+  <%= session[:player2] %> HP: 20
+</p>
+<p>
+  <form action='/attack' >
+    <input type='submit' value='Attack' />
+  </form>
+</p>
