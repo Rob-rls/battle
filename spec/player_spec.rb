@@ -1,22 +1,24 @@
 require "player"
 
 describe Player do
-  subject(:player) {Player.new("rob")}
+  subject(:thor) {Player.new("Thor")}
+  subject(:loki) {Player.new("Loki")}
 
   it "returns name" do
-    expect(player.name).to eq "rob"
+    expect(thor.name).to eq "Thor"
   end
 
   it "displays hitpoints" do
-    expect(player.hp).to eq 60
+    expect(thor.hp).to eq described_class::DEFAULT_HP
   end
 
-  describe 'is hit by an attack' do
+  it "attacks an opponet" do
+    expect(loki).to receive(:receive_damage)
+    thor.attack(loki)
+  end
 
-    it "reduces it's HP" do
-      expect{player.hit}.to change{player.hp}.by(-10)
-    end
-
+  it "reduces it's HP if hit" do
+    expect{thor.receive_damage}.to change{thor.hp}.by(-10)
   end
 
 end

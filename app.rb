@@ -16,12 +16,12 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    p session
+    # p session
     erb(:play)
   end
 
   get '/attack' do
-    $player2.hit
+    $player1.attack($player2)
     erb(:attack)
   end
 
