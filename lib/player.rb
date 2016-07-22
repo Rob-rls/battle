@@ -10,7 +10,7 @@ class Player
   end
 
   def take_damage
-    @hp -=10
+    @hp -= Kernel.rand(1..10)
   end
 
   def alive?

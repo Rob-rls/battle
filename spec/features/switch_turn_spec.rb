@@ -1,4 +1,5 @@
 feature "switch turns" do
+
   before do
     sign_in_and_play
   end
@@ -13,11 +14,5 @@ feature "switch turns" do
     expect(page).to have_content("Noby's turn")
   end
 
-  scenario "when a player has zero HP" do
-    9.times {
-      click_button "attack"
-      click_button "ok"
-     }
-     expect(page).to have_content("Noby loses!")
-  end
+
 end
